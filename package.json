@@ -4,12 +4,29 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build --modern",
+    "lint": "vue-cli-service lint",
+    "test:Avatar": "vue serve ./src/compontents/Avatar/test.vue",
+    "test:Icon": "vue serve ./src/compontents/Icon/test.vue",
+    "test:Pager": "vue serve ./src/compontents/Pager/test.vue",
+    "test:Empty": "vue serve ./src/compontents/Empty/test.vue",
+    "test:ImageLoader": "vue serve ./src/compontents/ImageLoader/test.vue",
+    "test:Contact": "vue serve ./src/compontents/Contact/test.vue",
+    "test:Menu": "vue serve ./src/compontents/Menu/test.vue",
+    "test:SiteAside": "vue serve ./src/compontents/SiteAside/test.vue",
+    "test:Layout": "vue serve ./src/compontents/Layout/test.vue",
+    "test:RightList": "vue serve ./src/view/Blog/components/test.vue"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "highlight.js": "^10.7.2",
+    "mockjs": "^1.1.0",
+    "nprogress": "^0.2.0",
+    "querystring": "^0.2.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -18,8 +35,12 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vuefix": "^0.2.1",
+    "less": "^4.1.1",
+    "less-loader": "^5.0.0",
     "lint-staged": "^9.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^4.4.1"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -29,5 +50,11 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common.js"
+  },
+  "alias": {
+    "vue" : "./node_modules/vue/dist/vue.common.js"
   }
 }

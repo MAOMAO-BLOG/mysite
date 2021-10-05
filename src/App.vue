@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app-container">
+    <Layout ref='test'>
+      <template #left>
+          <div class="avatar">
+                <SiteAside/>
+          </div>
+      </template>
+      <template #main>
+        <RouterView />
+      </template>
+    </Layout>
+    <div class="toTop">
+      <to-top/>
+    </div>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Layout from "./compontents/Layout";
+import SiteAside from "./compontents/SiteAside/index";
+import ToTop from '@/compontents/ToTop';
 export default {
-  name: 'App',
+  name:'App',
   components: {
-    HelloWorld
-  }
-}
+    Layout,
+    SiteAside,
+    ToTop
+  },
+};
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style  lang='less' scoped>
+@import '~@/styles/global.less';
+@import '~@/styles/var.less';
+@import '~@/styles/mixin.less';
+.app-container{
+  .self-fill(fixed);
+  .avatar{
+    width:400px;
+    height:100%;
+    background: @dark;
+  }
 }
 </style>

@@ -1,3 +1,12 @@
 module.exports = {
-  lintOnSave: false
+  devServer:{
+    proxy:{
+      '/api':{
+        target:"https://www.my-site.com",
+      }
+    }
+  },
+  configureWebpack:require('./webpack.config'),
+  lintOnSave: true,
+
 }
